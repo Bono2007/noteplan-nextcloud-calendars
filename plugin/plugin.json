@@ -1,0 +1,66 @@
+{
+  "noteplan.minAppVersion": "3.9.2",
+  "macOS.minVersion": "10.13.0",
+  "plugin.id": "llc.NextcloudCalendars",
+  "plugin.name": "📅 Agendas Nextcloud",
+  "plugin.description": "Récupère les agendas CalDAV partagés et les insère dans les notes quotidiennes.",
+  "plugin.version": "1.0.0",
+  "plugin.author": "Laurent Lassalle-Carrère",
+  "plugin.url": "https://github.com/NotePlan/plugins/blob/main/llc.NextcloudCalendars/README.md",
+  "plugin.changelog": "https://github.com/NotePlan/plugins/blob/main/llc.NextcloudCalendars/CHANGELOG.md",
+  "plugin.script": "index.js",
+  "plugin.dependencies": [],
+  "plugin.lastUpdateInfo": "Première version publique. Découverte des calendriers CalDAV, bloc agenda écrit sur plusieurs jours et rafraîchi en place.",
+  "plugin.commands": [
+    {
+      "name": "Agendas Nextcloud : rafraîchir",
+      "description": "Met à jour le bloc agenda dans les prochains jours.",
+      "jsFunction": "agendaRafraichir",
+      "aliases": ["agenda", "agendaFede", "Agenda fédé"]
+    },
+    {
+      "name": "Agendas Nextcloud : choisir les calendriers",
+      "description": "Découvre les calendriers CalDAV et choisit ceux à suivre.",
+      "jsFunction": "agendaChoisirCalendriers",
+      "aliases": ["agendaConfig", "Agenda fédé"]
+    },
+    {
+      "name": "Agendas Nextcloud : bloc du jour",
+      "description": "Retourne le bloc du jour sans rien écrire (pour les templates).",
+      "jsFunction": "agendaBlocDuJour",
+      "aliases": ["agendaBloc", "Agenda fédé"]
+    }
+  ],
+  "plugin.settings": [
+    { "type": "heading", "title": "Connexion CalDAV" },
+    {
+      "type": "string",
+      "key": "serverUrl",
+      "title": "Racine WebDAV",
+      "description": "Ex. https://mynextcloud.ndd/remote.php/dav",
+      "default": "https://mynextcloud.ndd/remote.php/dav"
+    },
+    { "type": "string", "key": "username", "title": "Identifiant", "default": "" },
+    { "type": "string", "key": "password", "title": "Mot de passe", "default": "" },
+    { "type": "heading", "title": "Affichage" },
+    {
+      "type": "number",
+      "key": "daysAhead",
+      "title": "Nombre de jours traités (aujourd'hui inclus)",
+      "default": 7
+    },
+    {
+      "type": "string",
+      "key": "blockTitle",
+      "title": "Titre du bloc",
+      "default": "📅 Agendas partagés"
+    },
+    {
+      "type": "json",
+      "key": "calendars",
+      "title": "Calendriers suivis",
+      "description": "Rempli par la commande « choisir les calendriers ». Ne pas éditer à la main.",
+      "default": []
+    }
+  ]
+}
