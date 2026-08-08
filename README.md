@@ -5,8 +5,8 @@ agenda dans les notes quotidiennes, sur plusieurs jours d'avance.
 
 ```
 > 📅 Agendas partagés : Mardi 09 décembre 2025
-	> PC : 10:00-12:30 Evenement Laïcité LR, 18:00-20:00 Réunion IRES
-	> CB : Journée : Avignon, Lundi 12/01 - TT
+	> John Doe : 10:00-12:30 Evenement Laïcité LR, 18:00-20:00 Réunion IRES
+	> Mike Horn : Journée : Avignon, Lundi 12/01 - TT
 ```
 
 ## Installation
